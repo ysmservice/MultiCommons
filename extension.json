@@ -10,8 +10,8 @@
         "MultiCommonsHooks": "MultiCommonsHooks.php"
     },
     "Hooks": {
-        "BeforeInitialize": [
-            "MultiCommonsHooks::onBeforeInitialize"
+        "SetupAfterCache": [
+            "MultiCommonsHooks::onSetupAfterCache"
         ]
     },
     "manifest_version": 2
