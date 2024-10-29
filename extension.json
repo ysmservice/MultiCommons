@@ -1,0 +1,16 @@
+{
+    "name": "MultiCommons",
+    "author": "ysmservice",
+    "url": "https://ysmserv.com",
+    "description": "Adds multiple ForeignAPIRepo file repositories.",
+    "version": "1.0.0",
+    "license-name": "MIT",
+    "type": "other",
+    "AutoloadClasses": {},
+    "Hooks": {
+        "SetupAfterCache": [
+            "MultiCommonsHooks::onSetupAfterCache"
+        ]
+    },
+    "manifest_version": 2
+}
