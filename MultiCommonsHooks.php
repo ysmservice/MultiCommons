@@ -1,8 +1,8 @@
 <?php
-use MediaWiki\RepoGroup\ForeignAPIRepo;
+
 
 class MultiCommonsHooks {
-    public static function onBeforeInitialize() {
+    public static function onSetupAfterCache() {
         global $wgForeignFileRepos, $wgUploadDirectory, $wgFileBackends, $IP;
 
         // $IPを定義する
@@ -13,17 +13,17 @@ class MultiCommonsHooks {
 
         $wgFileBackends[] = [
             'name' => 'ysmwikicommons-backend',
-            'class' => 'ForeignAPIRepo',
+            'class' => 'FSFileBackend',
             'lockManager' => 'nullLockManager',
-            'containerPath' => "{$IP}/images",
+            'containerPath' => $wgUploadDirectory,
             'directoryMode' => 0777
         ];
 
         $wgFileBackends[] = [
             'name' => 'skypediacommons-backend',
-            'class' => 'ForeignAPIRepo',
+            'class' => 'FSFileBackend',
             'lockManager' => 'nullLockManager',
-            'containerPath' => "{$IP}/images",
+            'containerPath' => $wgUploadDirectory,
             'directoryMode' => 0777
         ];
 
