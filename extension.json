@@ -6,10 +6,12 @@
     "version": "1.0.0",
     "license-name": "MIT",
     "type": "other",
-    "AutoloadClasses": {},
+    "AutoloadClasses": {
+        "MultiCommonsHooks": "MultiCommonsHooks.php"
+    },
     "Hooks": {
-        "SetupAfterCache": [
-            "MultiCommonsHooks::onSetupAfterCache"
+        "BeforeInitialize": [
+            "MultiCommonsHooks::onBeforeInitialize"
         ]
     },
     "manifest_version": 2
